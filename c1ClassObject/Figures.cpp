@@ -39,16 +39,16 @@ double Circle::Perimeter()
     return 2 * PI * Radius;
 }
 
-int main()
-{
-    {
-        Point2D P;
-        P.Set(7.2, 4.3);
-        P.Move(2.7, 4.1);
-    }
-    Circle Cir;
-    Cir.Set(0, 10, 20); // valid
-    Cir.Set(-5); //valid: R still is 20
-    Cir.Set(25); // R = 25
-    return 0;
-}
+// int main()
+// {
+//     {
+//         Point2D P;
+//         P.Set(7.2, 4.3);
+//         P.Move(2.7, 4.1);
+//     }
+//     Circle Cir;
+//     Cir.Set(0, 10, 20); // valid
+//     Cir.Set(-5); //valid: R still is 20
+//     Cir.Set(25); // R = 25
+//     return 0;
+// }
