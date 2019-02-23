@@ -15,6 +15,7 @@ class Circle {
     double Radius;
 public:
     void Set(double X0, double Y0, double r);
+    void Set(double r);
     void Move(double dX, double dY);
     double Area();
     double Perimeter();

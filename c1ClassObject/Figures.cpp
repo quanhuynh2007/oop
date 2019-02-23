@@ -19,6 +19,13 @@ void Circle::Set(double X0, double Y0, double r)
     if (r < 0) r = 0;
     this->Radius = r; // similar Radius = r;
 }
+void Circle::Set(double r)
+{
+    if (r >= 0)
+    {
+        Radius = r;
+    }
+}
 void Circle::Move(double dX, double dY)
 {
     Center.Move(dX, dY); // call method of Point2D
@@ -40,5 +47,8 @@ int main()
         P.Move(2.7, 4.1);
     }
     Circle Cir;
+    Cir.Set(0, 10, 20); // valid
+    Cir.Set(-5); //valid: R still is 20
+    Cir.Set(25); // R = 25
     return 0;
 }
