@@ -43,6 +43,8 @@ int main()
 {
     cout << endl << "fraction.cpp" << endl;
     Fraction a(2,3);
+    Fraction bb(a);
+    Fraction cc = a;
     Fraction b(5);
     Fraction c;
     c = 7;
