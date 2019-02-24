@@ -33,7 +33,7 @@ int main()
 
     cout << b.get(3) << endl;
     cout << a.get(3) << endl;
-    a.update(3, 10); // a[3] = 10, effect b[3]
+    a.update(3, 10); // a[3] = 10, effect b[3] ===> This is problem
     cout << b.get(3) << endl;
     cout << a.get(3) << endl;
     return 0;
