@@ -6,3 +6,4 @@ g++ methodConstructorCallMethodVirtual.cpp; ./a.out
 g++ destructorMethod.cpp; ./a.out
 g++ operatorOverloading.cpp ; ./a.out
 g++ mainFractionOperator.cpp fractionOperator.cpp; ./a.out
+g++ examplePassByValue.cpp; ./a.out
