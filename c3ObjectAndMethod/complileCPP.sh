@@ -9,3 +9,4 @@ g++ mainFractionOperator.cpp fractionOperator.cpp; ./a.out
 g++ examplePassByValue.cpp; ./a.out
 g++ examplePassByReference.cpp; ./a.out
 g++ pointerPassByValueAndReference.cpp; ./a.out
+g++ exampleMultiParamNotKnowInMethod.cpp; ./a.out
