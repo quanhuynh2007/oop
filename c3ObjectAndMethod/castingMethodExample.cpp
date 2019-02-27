@@ -2,12 +2,40 @@
 using namespace std;
 
 // 2.2
-        class parent{};
-        class child: public parent{};
+    class parent{};
+    class child: public parent{};
+
+// 2.3
+    class parentDynamic
+    {
+    public:
+        virtual void methodPoly(){};
+    };
+    class childDynamic: public parentDynamic{};
+
+// 2.4
+    class constA
+    {
+        public:
+            void doSomething(){};
+    };
+    void testA(const constA& a)
+    {
+        //a.doSomething(); // error, because method is non-const
+        constA* b;
+        b = const_cast<constA*> (&a);
+        b->doSomething(); // okay
+    }
+
+// 2.5
+    class reinterpretA{};
+    class reinterpretB{};
+
+
 
 int main()
 {
-    cout << endl << "castingMethodExample.cpp" << endl;
+    cout << endl << "cat castingMethodExample.cpp" << endl;
 
     cout << "1. implicit casting (Ép kiểu ngầm định)" << endl;
     {
@@ -32,7 +60,18 @@ int main()
     }
     {
         cout << "2.3 dynamic_cast (Ép kiểu động)" << endl;
-        // to be continue
+        parentDynamic* pa = new parentDynamic();
+        childDynamic* pb = dynamic_cast<childDynamic*> (pa);
+    }
+    {
+        cout << "2.4 const_cast (Ép kiểu hằng)" << endl;
+        parentDynamic* pa = new parentDynamic();
+        childDynamic* pb = dynamic_cast<childDynamic*> (pa);
+    }
+    {
+        cout << "2.5 reinterpret_cast (Ép kiểu dịch lại)" << endl;
+        reinterpretA* pA = new reinterpretA();
+        reinterpretB* pB = reinterpret_cast<reinterpretB*> (pA);
     }
 
     return 0;
