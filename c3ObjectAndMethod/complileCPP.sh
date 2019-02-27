@@ -11,3 +11,4 @@ g++ examplePassByReference.cpp; ./a.out
 g++ pointerPassByValueAndReference.cpp; ./a.out
 g++ exampleMultiParamNotKnowInMethod.cpp; ./a.out
 g++ castingMethodExample.cpp; ./a.out
+g++ methodCreateUsingCast.cpp; ./a.out
