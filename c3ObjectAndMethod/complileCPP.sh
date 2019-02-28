@@ -14,3 +14,4 @@ g++ castingMethodExample.cpp; ./a.out
 g++ methodCreateUsingCast.cpp; ./a.out
 g++ methodOperatorUsingCast.cpp; ./a.out
 g++ staticDataMember.cpp; ./a.out
+g++ staticDataMemberClassObject.cpp; ./a.out
