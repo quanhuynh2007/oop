@@ -16,3 +16,4 @@ g++ methodOperatorUsingCast.cpp; ./a.out
 g++ staticDataMember.cpp; ./a.out
 g++ staticDataMemberClassObject.cpp; ./a.out
 g++ listConstructorforClassObject.cpp; ./a.out
+g++ methodConstOfClassObject.cpp; ./a.out
