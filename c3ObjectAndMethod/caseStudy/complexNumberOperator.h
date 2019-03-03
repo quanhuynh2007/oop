@@ -20,6 +20,6 @@ public:
     bool operator!=(const Complex&) const;
 
 // operator overloading <<
-friend ostream& operator<<(ostream &out, const Complex& src);
+friend ostream& operator<<(ostream&, const Complex&);
 };
 #endif

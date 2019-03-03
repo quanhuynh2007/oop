@@ -10,47 +10,54 @@ Complex::Complex(float a1, float b1)
     b = b1;
 }
 
-const Complex Complex::operator+(const Complex& src) const
+const Complex Complex::operator+(const Complex& t) const
 {
-    Complex temp;
-    temp.a = a + src.a;
-    temp.b = b + src.b;
-    return temp;
+    Complex z(a + t.a, b + t.b);
+    return z;
 }
 
-const Complex Complex::operator-(const Complex& src) const
+const Complex Complex::operator-(const Complex& t) const
 {
-    Complex temp;
-    temp.a = a - src.a;
-    temp.b = b - src.b;
-    return temp;
+    Complex z(a - t.a, b - t.b);
+    return z;
 }
 
-const Complex Complex::operator*(const Complex& src) const
+const Complex Complex::operator*(const Complex& t) const
 {
-    Complex temp;
-    temp.a = (a * src.a) - (b * src.b);
-    temp.b = a * src.b + b * src.a;
-    return temp;
+    Complex z;
+    z.a = (a * t.a) - (b * t.b);
+    z.b = a * t.b + b * t.a;
+    return z;
 }
 
-const Complex Complex::operator/(const Complex& src) const
+const Complex Complex::operator/(const Complex& t) const
 {
-    // z = (a + b * i)/(src.a + src.b * i)
-    // (srcZ = src.a - src.b * i)
-    // src2 = src.a^2 + src.b^2
-    //                          z * (src.a + src.b * i) = (a + b * i)
-    // (src.a - src.b * i) *    z * (src.a + src.b * i) = (a + b * i) * srcZ
-    // (src.a^2 + src.b^2) * z = (a + b * i) * srcZ = srcZZ
+    // z = this/t; this = (a + b * i); t = t.a + t.b * i;
+    // => T = t.a - t.b * i; (Complex)
 
-    Complex srcZ(src.a, 0 - src.b);
-    float src2 = src.a * src.a + src.b * src.b;
-    Complex srcZZ(a, b);
-    srcZZ = srcZZ * srcZ;
-    Complex temp;
-    temp.a = srcZZ.a / src2;
-    temp.b = srcZZ.b / src2;
-    return temp;
+    // tT = t*T = t.a^2 + t.b^2
+    // => tT = t.a * t.a + t.b * t.b; (float)
+
+    //      z * t = this
+    // T *  z * t = this * T
+    // tT * z = this * T = thisT
+    // z = thisT/tT;
+    // => thisT = this * T; (Complex)
+    // => z = thisT.a/tT + thisT.b/tT;
+
+    // if (t == 0)
+    // {
+    //     cout << "Error divide 0!!!" << endl;
+    //     return Complex();
+    // }
+
+
+    Complex T(t.a, 0 - t.b);
+    float tT = t.a * t.a + t.b * t.b;
+    Complex thisT;
+    thisT = *this * T;
+    Complex z (thisT.a/tT, thisT.b/tT);
+    return z;
 }
 
 bool Complex::operator==(const Complex& src) const
