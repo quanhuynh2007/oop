@@ -2,7 +2,7 @@
 #include "Square.h"
 int main()
 {
-    cout << endl << "Not Poly cin MainProgRecSquaPolyv1.cpp Rectangle.cpp Square.cpp" << endl;
+    cout << endl << "c4GenSpecPoly_v2 Not Poly cin MainProgRecSqua.cpp Rectangle.cpp Square.cpp" << endl;
 
     Rectangle *pRec;
     Rectangle Rec;
