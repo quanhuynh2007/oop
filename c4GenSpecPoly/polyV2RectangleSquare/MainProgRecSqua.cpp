@@ -15,7 +15,8 @@ int main()
 
     pRec = &Sq;
     cout << "Square's size: ";
-    pRec->Input(cin); // Not poly
+    pRec->Input(cin); // Not poly FAIL
     cout << "Square's area = " << pRec->Area() << endl;
+    cout << "Fail because calculate follow Rectangle's area()" << endl;
     return 0;
 }
