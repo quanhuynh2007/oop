@@ -5,7 +5,7 @@ int main()
     Rectangle Rec;
     Square Sq;
 
-    cout << endl << "cat MainProgRecSqua.cpp Rectangle.cpp Square.cpp" << endl;
+    cout << endl << "MainProgRecSqua.cpp Rectangle.cpp Square.cpp" << endl;
     cout << "Rectangle's size: ";
     Rec.Input(cin);
     cout << "Rectangle's area = " << Rec.Area() << endl;

@@ -7,7 +7,7 @@ class Rectangle
 protected:
     float width, height;
 public:
-    Rectangle(float w, float h);
+    Rectangle(float w = 0, float h = 0);
     float Area();
     virtual void Input(istream& inDevice);
 };
