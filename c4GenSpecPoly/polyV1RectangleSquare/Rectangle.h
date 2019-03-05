@@ -9,6 +9,6 @@ protected:
 public:
     Rectangle(float w = 0, float h = 0);
     float Area();
-    virtual void Input(istream& inDevice);
+    void Input(istream& inDevice);
 };
 #endif
