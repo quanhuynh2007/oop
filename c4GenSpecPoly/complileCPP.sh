@@ -5,3 +5,4 @@
 ./polyV5RectangleSquare/complileCPP.sh
 g++ accessDataExample.cpp; ./a.out
 g++ pointFriendVirtualDestructor.cpp; ./a.out
+./polyV6FigureGetClass/complileCPP.sh

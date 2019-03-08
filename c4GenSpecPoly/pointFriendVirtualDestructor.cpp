@@ -19,6 +19,7 @@ protected:
 public:
     Polygon(int n = 0)
     {
+        cout << endl << "Polygon(int n = 0)" << endl;
         Vers = NULL; nVer = 0;
         if (n > 0)
         {
@@ -62,6 +63,7 @@ Point RECT::Center()
 
 RECT::RECT(Point A, Point B)
 {
+    cout << endl << "RECT::RECT(Point A, Point B)" << endl;
     nVer = 4;
     P = A;
     Q = B;
@@ -94,3 +96,16 @@ int main()
     delete pg;
     return 0;
 }
+
+
+// Output 
+// Example method Virtual Destructor: pointFriendVirtualDestructor.cpp
+
+// Polygon(int n = 0)
+
+// RECT::RECT(Point A, Point B)
+// 4
+
+// RECT::~RECT()
+
+// virtual ~Polygon()
