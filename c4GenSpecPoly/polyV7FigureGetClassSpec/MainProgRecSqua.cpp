@@ -23,7 +23,7 @@ Figure* figMaxArea(Figure* figs[], int nFig)
 }
 int main()
 {
-    cout << endl << "polyV7FigureGetClassSpec MainProgRecSqua.cpp Triangle.cpp Circle.cpp Ellipse.cpp Square.cpp Rectangle.cpp" << endl;
+    cout << endl << "(NOT RECOMMEND)polyV7FigureGetClassSpec MainProgRecSqua.cpp Triangle.cpp Circle.cpp Ellipse.cpp Square.cpp Rectangle.cpp" << endl;
 
     Figure* Figs[] = {  new Rectangle(9.3F, 9.7F),  new Circle(4.5F),
                         new Ellipse(9.24, 4.7F),    new Square(9.5F),
