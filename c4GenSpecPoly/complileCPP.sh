@@ -7,3 +7,4 @@ g++ accessDataExample.cpp; ./a.out
 g++ pointFriendVirtualDestructor.cpp; ./a.out
 ./polyV6FigureGetClass/complileCPP.sh
 ./polyV7FigureGetClassSpec/complileCPP.sh
+./polyV8FigureGetClassClone/complileCPP.sh
