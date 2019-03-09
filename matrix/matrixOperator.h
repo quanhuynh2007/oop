@@ -5,22 +5,18 @@
 class Matrix
 {
 private:
-    int numerator;
-    int denominator;
+    // Matrix mxn or mxm
+    vector<vector<Fraction>> ma;
+    int rowNum, colNum;
 public:
-    Matrix();
-    Matrix(int, int);
-    float getF()
-    {
-        return ((float)numerator/denominator);
-    }
-    void compact();
-    const Matrix operator+(const Matrix&) const;
-    const Matrix operator*(const Matrix&) const;
-    bool operator==(const Matrix&) const;
+    //Matrix();
+    int inputMatrix(string fileName);
+//     const Matrix operator+(const Matrix&) const;
+//     const Matrix operator*(const Matrix&) const;
+//     bool operator==(const Matrix&) const;
 
-// operator overloading <<
-friend ostream& operator<<(ostream &out, const Matrix& src);
+// // operator overloading <<
+// friend ostream& operator<<(ostream &out, const Matrix& src);
 };
 
 #endif
