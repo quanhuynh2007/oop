@@ -82,6 +82,11 @@ ostream& operator<<(ostream &out, const Fraction& src)
     }
     return out;
 }
+// ostream& operator<<(ostream &out, const float src)
+// {
+//     out << src;
+//     return out;
+// }
 
 istream& operator>> (istream &is, Fraction& src)
 {

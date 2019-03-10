@@ -17,7 +17,7 @@ private:
 public:
     Fraction();
     Fraction(int, int);
-    float getF()
+    float getF() const
     {
         return ((float)numerator/denominator);
     }
@@ -28,6 +28,7 @@ public:
 
 // operator overloading <<
 friend ostream& operator<<(ostream &out, const Fraction& src);
+// friend ostream& operator<<(ostream &out, const float);
 
 friend istream& operator>> (istream &is, Fraction& src);
 };
