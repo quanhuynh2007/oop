@@ -158,15 +158,26 @@ ostream& operator<<(ostream &out, const Matrix& src)
     {
         for (int j = 0; j < src.colNum; j++)
         {
-            if (src.typePrint == 'f')
+            if (src.typePrint != 'f')
             {
-                out << setw(10) << right ;
+                out << setw(12) << right ;
                 out << src.ma[i][j].getF();
             }
             else
             {
-                out << setw(10) << right ;
-                out << src.ma[i][j] << "\t";
+                out << setw(12) << right;
+                out << src.ma[i][j];
+            }
+        }
+        // print FULL Fraction and Float
+        if (src.typePrint == 'a')
+        {
+            out << setw(4) << right;
+            out << "|";
+            for (int j = 0; j < src.colNum; j++)
+            {
+                out << setw(12) << right ;
+                out << src.ma[i][j];
             }
         }
         out << endl;

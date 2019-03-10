@@ -4,7 +4,7 @@ Fraction::Fraction()
     numerator = 0;
     denominator = 1;
 }
-Fraction::Fraction(int num, int den)
+Fraction::Fraction(ulong num, ulong den)
 {
     if (den < 0)
     {
@@ -28,9 +28,9 @@ void Fraction::compact()
         denominator = 1;
         return;
     }
-    int num = abs(numerator);
-    int den = abs(denominator);
-    int rec = 0;
+    ulong num = labs(numerator);
+    ulong den = labs(denominator);
+    ulong rec = 0;
     while (den != 0)
     {
         rec = num % den;
@@ -38,8 +38,8 @@ void Fraction::compact()
         den = rec;
     }
     //
-    numerator = (int)numerator/num;
-    denominator = (int)denominator/num;
+    numerator = (ulong)numerator/num;
+    denominator = (ulong)denominator/num;
 
     if (denominator < 0)
     {
@@ -75,11 +75,13 @@ bool Fraction::operator==(const Fraction& src) const
 // operator overloading <<
 ostream& operator<<(ostream &out, const Fraction& src)
 {
-    out << src.numerator;
+    string buf;
+    buf = to_string(src.numerator);
     if (src.denominator != 1)
     {
-        out << "/" << src.denominator;
+        buf = buf + "/" + to_string(src.denominator);
     }
+    out << buf;
     return out;
 }
 // ostream& operator<<(ostream &out, const float src)
@@ -94,7 +96,7 @@ istream& operator>> (istream &is, Fraction& src)
     fflush(stdin); // remove cache
     is >> buf;
     int pos = buf.find('/'); // Fraction
-    int num, den;
+    ulong num, den;
     if (pos > 0)
     {
         num = stoi(buf.substr(0, pos));

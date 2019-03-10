@@ -8,15 +8,16 @@
 #include <iomanip> 
 #include <string>
 #define FLT_EPSILON (float)1.19209e-07
+#define ulong unsigned long
 using namespace std;
 class Fraction
 {
 private:
-    int numerator;
-    int denominator;
+    ulong numerator;
+    ulong denominator;
 public:
     Fraction();
-    Fraction(int, int);
+    Fraction(ulong, ulong);
     float getF() const
     {
         return ((float)numerator/denominator);

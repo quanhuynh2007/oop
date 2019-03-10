@@ -3,7 +3,7 @@
 int main(int argc, char* args[])
 {
     cout << endl << "mainMatrixOperator.cpp + fractionOperator.cpp + matrixOperator.cpp" << endl;
-    char type = ' '; // default : Fracion
+    char type = ' '; // default : float
     if (argc >= 2)
     {
         type = args[1][0];
@@ -45,18 +45,28 @@ int main(int argc, char* args[])
     cout << "Matrix AD * " << anpha.getF() << " (" << anpha << ")" << endl << matrixADanpha << endl;
 
     matrixE = matrixM.createMatrixE();
-    cout << "Matrix E" << endl << matrixE << endl;
+    //cout << "Matrix E" << endl << matrixE << endl;
     matrixEgama = matrixE * gama;
-    cout << "Matrix E * " << gama << " (" << gama << ")" << endl << matrixEgama << endl;
+    cout << "Matrix E * " << gama.getF() << " (" << gama << ")" << endl << matrixEgama << endl;
 
     matrixResultTemp = matrixADanpha + matrixMbeta + matrixEgama;
     cout << "matrixResultTemp = ";
     cout << anpha.getF() << "*(A + D) + " << beta.getF() << "*M + " << gama.getF() << "*E)" << endl << matrixResultTemp << endl;
+
+    cout << "---------------------------------Result---------------------------------" << endl;
     matrixTranspose = matrixResultTemp.createMatrixTrans();
     cout << "matrixTranspose = transpose(matrixResultTemp)" << endl << matrixTranspose << endl;
 
     matrixRank = matrixM.createMatrixRank();
     cout << "Matrix Rank initialize " << endl << matrixRank << endl;
+    cout << "---------------------------------Rank Calculate---------------------------------" << endl;
+
+    for (int i = 0; i < 6; i++) // Max 6 time
+    {
+        cout << "Time " << (i + 1) << endl;
+        matrixRank = matrixTranspose * matrixRank;
+        cout << matrixRank << endl;
+    }
 
     return 0;
 }
