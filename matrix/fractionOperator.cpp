@@ -88,7 +88,7 @@ istream& operator>> (istream &is, Fraction& src)
     string buf;
     fflush(stdin); // remove cache
     is >> buf;
-    int pos = buf.find('/');
+    int pos = buf.find('/'); // Fraction
     int num, den;
     if (pos > 0)
     {
@@ -97,8 +97,18 @@ istream& operator>> (istream &is, Fraction& src)
     }
     else
     {
-        num = stoi(buf);
-        den = 1;
+        pos = buf.find('.'); // Float
+        if (pos > 0)
+        {
+            den = stoi(buf.substr(pos + 1, buf.length() - pos));
+            num = stoi(buf.substr(0, pos)) * pow(10, buf.length() - 2) + den;
+            den = pow(10, buf.length() - 2);
+        }
+        else
+        {
+            num = stoi(buf);
+            den = 1;
+        }
     }
     src.numerator = num;
     src.denominator = den;

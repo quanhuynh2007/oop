@@ -22,7 +22,7 @@ int Matrix::inputMatrix(string fileName)
         for (int j = 0; j < colNum; j++)
         {
             fileInput >> ma[j][i];
-            cout << ma[j][i].getF() << "\t";
+            cout << ma[j][i] << "\t";
         }
         cout << endl;
     }
